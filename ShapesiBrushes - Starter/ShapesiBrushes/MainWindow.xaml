@@ -1,0 +1,488 @@
+﻿<Window x:Class="ShapesiBrushes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShapesiBrushes"
+        mc:Ignorable="d"
+        Title="Shapes i Brushes" Height="559.382" Width="525">
+    <Grid>
+        <TabControl x:Name="tabShapes" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="0,0,-0.333,-124" >
+            <TabItem Header="Shapes">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75*"/>
+                        <ColumnDefinition Width="181*"/>
+                        <ColumnDefinition Width="255*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.ColumnSpan="2">
+                        <Ellipse Fill="DarkBlue"
+                                 Stroke="DarkMagenta"
+                                 StrokeThickness="5"
+                                 Width="100" Height="50"/>
+                        <Rectangle Fill="YellowGreen"
+                                   Stroke="DarkOliveGreen"
+                                   StrokeThickness="5"
+                                   Width="100" Height="50"/>
+                    </StackPanel>
+                    <Canvas Grid.Row="2" Grid.ColumnSpan="2">
+                        <Ellipse Canvas.Top="25"
+                                 Canvas.Left="25"
+                                 Fill="DarkBlue"
+                                 Stroke="DarkMagenta"
+                                 StrokeThickness="5"
+                                 Width="100" Height="50"/>
+                        <Rectangle Fill="YellowGreen"
+                                   Canvas.Top="50"
+                                   Canvas.Left="75"
+                                   Stroke="DarkOliveGreen"
+                                   StrokeThickness="5"
+                                   Width="100" Height="50"/>
+                    </Canvas>
+                    <Ellipse Grid.Row="0" Grid.Column="2"
+                                 Fill="DarkBlue"
+                                 Stroke="DarkMagenta"
+                                 StrokeThickness="5"/>
+                    <Rectangle Fill="YellowGreen"
+                                   Grid.Row="1" Grid.Column="2"
+                                   Stroke="DarkOliveGreen"
+                                   StrokeThickness="5"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Rectangles arrodonits">
+                <StackPanel>
+                    <Rectangle Fill="Yellow" Stroke="CadetBlue" StrokeThickness="5"
+                               Width="100" Height="60" HorizontalAlignment="Left"
+                               Margin="10"
+                               RadiusY="5"
+                               RadiusX="5"/>
+                    <TextBlock Margin="5,5,0,0">Corner radius de 5.</TextBlock>
+                    <Rectangle Fill="Yellow" Stroke="CadetBlue" StrokeThickness="5"
+                               Width="100" Height="60" HorizontalAlignment="Left"
+                               Margin="10"
+                               RadiusY="10"
+                               RadiusX="10"/>
+                    <TextBlock Margin="5,5,0,0">Corner radius de 10.</TextBlock>
+                    <Rectangle Fill="Yellow" Stroke="CadetBlue" StrokeThickness="5"
+                               Width="100" Height="60" HorizontalAlignment="Left"
+                               Margin="10"
+                               RadiusY="25"
+                               RadiusX="10"/>
+                    <TextBlock Margin="5,5,0,0">Corner radius de 10 (X) i 25 (Y).</TextBlock>
+                    <Rectangle Fill="Yellow" Stroke="CadetBlue" StrokeThickness="5"
+                               Width="100" Height="60" HorizontalAlignment="Left"
+                               Margin="10"
+                               RadiusY="30"
+                               RadiusX="50"/>
+                    <TextBlock Margin="5,5,0,0">Corner radius de 100 (X) i 60 (Y).</TextBlock>
+                </StackPanel>
+
+            </TabItem>
+            <TabItem Header="FillMode">
+                <Grid ShowGridLines="True" Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Ellipse Fill="Yellow" Stroke="Blue"/>
+                    <TextBlock Grid.Row="1" TextAlignment="Center">Fill</TextBlock>
+                    <Ellipse Grid.Column="1" Fill="Yellow" Stroke="Blue"
+                             Stretch="Uniform"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" TextAlignment="Center">Uniform</TextBlock>
+                    <Ellipse Grid.Column="2" Fill="Yellow" Stroke="Blue"
+                             Stretch="UniformToFill"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" TextAlignment="Center">UniformToFill</TextBlock>
+                </Grid>
+            </TabItem>
+            <TabItem Header="ViewBox">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock>Primera fila de la graella.</TextBlock>
+                    <Viewbox Grid.Row="1">
+                        <Canvas Width="100" Height="100">
+                            <Ellipse Canvas.Top="25"
+                                 Canvas.Left="25"
+                                 Fill="DarkBlue"
+                                 Stroke="DarkMagenta"
+                                 StrokeThickness="5"
+                                 Width="100" Height="50"/>
+                            <Rectangle Fill="YellowGreen"
+                                   Canvas.Top="50"
+                                   Canvas.Left="75"
+                                   Stroke="DarkOliveGreen"
+                                   StrokeThickness="5"
+                                   Width="100" Height="50"/>
+                        </Canvas>
+                    </Viewbox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Polilinies i Poligons">
+                <Canvas>
+                    <Polyline Stroke="Blue" StrokeThickness="5"
+                              Points="10,150 30,140 50,160 70,120 90,180 110,100 130,200"/>
+                    <Polygon Stroke="Blue" StrokeThickness="5"
+                              Points="10,150 30,140 50,160 70,120 90,180 110,100 130,200"
+                             Canvas.Top="200" Fill="Yellow"/>
+                </Canvas>
+            </TabItem>
+            <TabItem Header="Interior/Exterior">
+                <Canvas>
+                    <Polygon Stroke="Blue" Fill="Yellow" StrokeThickness="2"
+                             Points="15,200 68,70 110,200 0,125 135,125"/>
+                    <Polyline Stroke="Blue" Fill="Yellow" StrokeThickness="2"
+                              Points="15,200 68,70 110,200 0,125 135,125"
+                              Canvas.Left="250"
+                              FillRule="Nonzero"/>
+                </Canvas>
+            </TabItem>
+            <TabItem Header="Snap to Device pixels">
+                <Grid Margin="7">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle SnapsToDevicePixels="False" Grid.Column="1"
+                               Margin="10" Height="10" Fill="Red"/>
+                    <TextBlock VerticalAlignment="Center">No snap:</TextBlock>
+                    <Rectangle SnapsToDevicePixels="False" Grid.Column="1" Grid.Row="1"
+                               Margin="10" Height="10" Fill="Red"/>
+                    <TextBlock VerticalAlignment="Center" Grid.Row="1">Snap:</TextBlock>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Puntes de línia">
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="1">Flat</TextBlock>
+                    <Polyline Stroke="Blue" StrokeThickness="15"
+                              Points="10,10 30,0 50,20 90,10 200,10"
+                              StrokeEndLineCap="Flat"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1">Square</TextBlock>
+                    <Polyline Stroke="Blue" StrokeThickness="15" Grid.Row="1"
+                              Points="10,10 30,0 50,20 90,10 200,10"
+                              StrokeEndLineCap="Square"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1">Round</TextBlock>
+                    <Polyline Stroke="Blue" StrokeThickness="15" Grid.Row="2"
+                              Points="10,10 30,0 50,20 90,10 200,10"
+                              StrokeEndLineCap="Round"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1">Triangle</TextBlock>
+                    <Polyline Stroke="Blue" StrokeThickness="15" Grid.Row="3"
+                              Points="10,10 30,0 50,20 90,10 200,10"
+                              StrokeEndLineCap="Triangle"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Juntes de línia">
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height= "Auto"></RowDefinition>
+                        <RowDefinition Height= "Auto"></RowDefinition>
+                        <RowDefinition Height= "Auto"></RowDefinition>
+                        <RowDefinition Height= "Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center">Bevel </TextBlock>
+
+                    <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">Round</TextBlock>
+
+                    <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">Miter</TextBlock>
+
+                    <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">Miter (Limit=3)</TextBlock>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Linies Puntejades">
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center">Patró de puntejat "1 2"</TextBlock>
+                    <Polyline Stroke="Blue" StrokeThickness="15" Grid.Row="0"
+                              Points="10,10 30,0 50,20 90,10 200,10"
+                              StrokeDashArray ="1 2"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">Patró de puntejat "2 1"</TextBlock>
+                    <Polyline Stroke="Blue" StrokeThickness="15" Grid.Row="1"
+                              Points="10,10 30,0 50,20 90,10 200,10"
+                              StrokeDashArray ="2 1"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">Patró de puntejat "5 0.2 3 0.2"</TextBlock>
+                    <Polyline Stroke="Blue" StrokeThickness="15" Grid.Row="2"
+                              Points="10,10 30,0 50,20 90,10 200,10"
+                              StrokeDashArray ="5 0.2 3 0.2"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">Patró de puntejat SENAR "2 0.5 2"</TextBlock>
+                    <Polyline Stroke="Blue" StrokeThickness="15" Grid.Row="3"
+                              Points="10,10 30,0 50,20 90,10 200,10"
+                              StrokeDashArray ="2 0.5 2"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">Patró de puntejat amb punta rodona</TextBlock>
+                    <Polyline Stroke="Blue" StrokeThickness="15" Grid.Row="4"
+                              Points="10,10 30,0 50,20 90,10 200,10"
+                              StrokeDashCap="Round"
+                              StrokeDashArray ="1 2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Gradients">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="5">Gradient Lineal en diagonal</TextBlock>
+                    <Rectangle Width="150" Height="100" Margin="5">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Blue" Offset="0"/>
+                                <GradientStop Color="Yellow" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="5">Amb un desplaçament de 0.5 per al groc</TextBlock>
+                    <Rectangle Width="150" Height="100" Margin="5" Grid.Row="1">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Blue" Offset="0"/>
+                                <GradientStop Color="Yellow" Offset="0.5"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="5">Gradient lineal horitzontal</TextBlock>
+                    <Rectangle Width="150" Height="100" Margin="5" Grid.Row="2">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="Blue" Offset="0"/>
+                                <GradientStop Color="Yellow" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="5">Gradient reflexat</TextBlock>
+                    <Rectangle Width="150" Height="100" Margin="5" Grid.Row="3">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush SpreadMethod="Reflect"
+                                                 StartPoint="0,0" EndPoint="0.5,0.5">
+                                <GradientStop Color="Blue" Offset="0"/>
+                                <GradientStop Color="Yellow" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="5">Gradient Multicolor</TextBlock>
+                    <Rectangle Width="150" Height="100" Margin="5" Grid.Row="4">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Blue" Offset="0"/>
+                                <GradientStop Color="Yellow" Offset="0.3"/>
+                                <GradientStop Color="Green" Offset="0.6"/>
+                                <GradientStop Color="Red" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Gradient en Text">
+                <Grid>
+                    <TextBlock FontSize="70" FontWeight="ExtraBold" TextWrapping="Wrap">
+                        <TextBlock.Text>Text Pintat amb un gradient</TextBlock.Text>
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Blue" Offset="0"/>
+                                <GradientStop Color="Yellow" Offset="0.3"/>
+                                <GradientStop Color="Green" Offset="0.6"/>
+                                <GradientStop Color="Red" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Gradient Radial">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="5">Gradient radial</TextBlock>
+                    <Ellipse Stroke="Black" StrokeThickness="1" Width="280" Height="200">
+                        <Ellipse.Fill>
+                            <RadialGradientBrush RadiusX="1" RadiusY="0.5">
+                                <GradientStop Color="Blue" Offset="0"/>
+                                <GradientStop Color="Yellow" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="5" TextWrapping="Wrap">Gradient radial amb el centre desplaçat</TextBlock>
+                    <Ellipse Stroke="Black" StrokeThickness="1" Width="280" Height="200" Grid.Row="1">
+                        <Ellipse.Fill>
+                            <RadialGradientBrush RadiusX="0.5" RadiusY="0.5"
+                                                 GradientOrigin="0.1,0.6">
+                                <GradientStop Color="Blue" Offset="0"/>
+                                <GradientStop Color="Yellow" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+            </TabItem>
+            <TabItem Header="ImageBrush">
+                <Canvas>
+
+                </Canvas>
+            </TabItem>
+            <TabItem Header="Tipus de Mosaic">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Margin="3">Mida fixa</TextBlock>
+                    <Rectangle Grid.Column="1" Stroke="Black">
+
+                    </Rectangle>
+
+                    <TextBlock Grid.Row="1" Margin="3">Mida proporcional</TextBlock>
+                    <Rectangle Grid.Row="1" Grid.Column="1" Stroke="Black">
+
+                    </Rectangle>
+
+                    <TextBlock Grid.Row="2" Margin="3">
+      Mida proporcional<LineBreak></LineBreak>(sense stretch)
+                    </TextBlock>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Mode de Mosaic">
+                <Grid>
+                    <UniformGrid>
+
+                    </UniformGrid>
+                    <UniformGrid>
+                        <UniformGrid.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                                <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
+                                <Setter Property="FontSize" Value="25"></Setter>
+                                <Setter Property="FontWeight" Value="Bold"></Setter>
+                                <Setter Property="Margin" Value="3"></Setter>
+                            </Style>
+                        </UniformGrid.Resources>
+                        <TextBlock>Tile</TextBlock>
+                        <TextBlock>FlipX</TextBlock>
+                        <TextBlock>FlipY</TextBlock>
+                        <TextBlock>FlipXY</TextBlock>
+                    </UniformGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="VisualBush">
+                <StackPanel Margin="3">
+                    <Button Name="cmd" Margin="3" Padding="5">Aquest és un botó de veritat?</Button>
+                    <Rectangle Margin="3" Height="{Binding ElementName=cmd,Path=ActualHeight}">
+
+                    </Rectangle>
+                    <Rectangle Margin="3" Height="50">
+
+                    </Rectangle>
+                    <Rectangle Margin="3" Height="150">
+
+                    </Rectangle>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Rota figures">
+                <Canvas>
+                    <Rectangle Width="80" Height="10" Stroke="Blue" Fill="Yellow" 
+          Canvas.Left="100" Canvas.Top="100">
+                    </Rectangle>
+
+
+
+                    <Rectangle Width="80" Height="10" Stroke="Blue" Fill="Yellow" 
+          Canvas.Left="300" Canvas.Top="100">
+                        <Rectangle.RenderTransform>
+                            <RotateTransform Angle="25" CenterX="40" CenterY="5"/>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                </Canvas>
+            </TabItem>
+            <TabItem Header="Rota elements">
+                <StackPanel>
+                    <StackPanel  Margin="25"  Background="LightYellow">
+                        <Button Padding="5" HorizontalAlignment="Left">Jo no estic girat</Button>
+                    </StackPanel>
+
+                    <StackPanel  Margin="25"  Background="LightYellow">
+                        <Button Padding="5" HorizontalAlignment="Left">Jo no estic girat</Button>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Reflexió">
+                <Grid Margin="10" Grid.IsSharedSizeScope="True" VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" SharedSizeGroup="Row"></RowDefinition>
+                        <RowDefinition SharedSizeGroup="Row"></RowDefinition>
+                        
+                    </Grid.RowDefinitions>
+                    <TextBox Name="txt" FontSize="80">Text Reflexat</TextBox>
+                    <Rectangle Grid.Row="1" RenderTransformOrigin="1,0.5">
+
+                    </Rectangle>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

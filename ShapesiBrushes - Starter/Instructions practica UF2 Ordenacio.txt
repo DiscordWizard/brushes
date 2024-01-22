@@ -1,0 +1,37 @@
+Practica M08 UF2
+Canvas Quadrat de molt per molt, viewbox de 1000x1000 (Exemple)
+Canviar mesures dels rectangles en comptes de moure, més fàcil que moure
+
+Fer funcio: "Intercanvia(Num 1, Num 2)" que quan es crida canvia els numeros, canvia els rectangles, fa la pausa i cria la animacio quan es faci
+
+Fer menu en un costat separat del canvas amb un grid, fet amb stackpanel.
+
+Opcio formes:
+Permet canviar de rectangles a punts
+
+Numeros: 
+Entrar quants numeros a ordenar (Taula)
+Generar aleatoriament els numeros (Cap repetit)
+Ex: 123456789 --> 847291563
+Fer funcio que pinta numeros al canvas (Rectangle 1/x amplada canvas i numero/y altura canvas)
+
+Gruix Marc: 
+Permetre que el marc dels rectangles canvin de gruix
+
+Radi: 
+Permetre canviar el radi dels rectangles
+
+Temps de pausa:
+Permetre configurar que a cada pas d'ordenacio tingui pausa, entrada en milisegons
+
+Marca intercanvis:
+Opcio Si/No, canvia el color dels elements a punt d'intercanviar-se
+
+Colors:
+4 Opcions
+Primera permet canviar el color normal dels rectangles
+Segona permet canviar el color correcte dels rectangles
+Tercera permet canviar el color dels rectangles sent intercanviats
+Quarta permet canviar el color del fons
+
+Funcio z index canvia quina esta a sobre de quina
